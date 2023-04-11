@@ -1,0 +1,49 @@
+{
+  "name": "fileforge",
+  "displayName": "FileForge",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ariqrafikusumah/ariqrafikusumah.git"
+  },
+  "icon": "/icon/icon-extension.png",
+  "activationEvents": [
+    "onWorkspaceOpen"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "fileforge.helloWorld",
+        "title": "Hello World"
+      },
+      {
+        "command": "fileforge.reactjs",
+        "title": "fileforge: Project React JS"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.77.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.36.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^4.9.5",
+    "@vscode/test-electron": "^2.3.0"
+  }
+}
