@@ -17,7 +17,7 @@ function activate(context) {
   // Sekarang berikan implementasi perintah dengan registerCommand
   // Parameter commandId harus sesuai dengan field command dalam package.json
   let disposable = vscode.commands.registerCommand(
-    "fileforge.helloWorld",
+    "fileforge.react-tailwind-css",
     function () {
 
       // Import modul yang diperlukan
@@ -40,12 +40,15 @@ function activate(context) {
       const fileHTML = path.join(folderPathPUBLIC, "index.html");
       const fileINDEX = path.join(folderPathSRC, "index.js");
       const filePACKAGE = path.join(folderPath, "package.json");
-      const fileContent = `console.log('berhasil buat file index, package dan folder src,public');`; // Isi dari file index.js
+      // const fileContent = `console.log('berhasil buat file index, package dan folder src,public');`; // Isi dari file index.js
+      const fileContentIndex = require(`./react-tailwind/src/FileContentIndex.js`);
+      const FileContentIndexHtml = require(`./react-tailwind/public/FileContentIndexHtml.js`);
+      const FileContentPackage = require(`./react-tailwind/FileContentPackage.js`);
 
       // Tulis file ke disk
-      fs.writeFileSync(fileHTML, fileContent);
-      fs.writeFileSync(fileINDEX, fileContent);
-      fs.writeFileSync(filePACKAGE, fileContent);
+      fs.writeFileSync(fileHTML, FileContentIndexHtml);
+      fs.writeFileSync(fileINDEX, fileContentIndex);
+      fs.writeFileSync(filePACKAGE, FileContentPackage);
 
       // Tampilkan pesan informasi untuk notifikasi
       vscode.window.showInformationMessage("public folder created!");
@@ -61,14 +64,13 @@ function activate(context) {
       setTimeout(() => {
         vscode.window.showInformationMessage("FILE FORGE v0.1.0");
       }, 4000); // tunggu selama 4 detik sebelum menampilkan pesan informasi terakhir
-      
     }
   );
 
   let disposableNewCommand = vscode.commands.registerCommand(
-    "fileforge.reactjs",
+    "fileforge.commingSoon",
     function () {
-      vscode.window.showInformationMessage("reactjs created!");
+      vscode.window.showInformationMessage("commingSoon created!");
     }
   );
 

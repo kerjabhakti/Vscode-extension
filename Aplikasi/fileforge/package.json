@@ -21,12 +21,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "fileforge.helloWorld",
-        "title": "Hello World"
+        "command": "fileforge.react-tailwind-css",
+        "title": "File Forge: React and Tailwind CSS"
       },
       {
-        "command": "fileforge.reactjs",
-        "title": "fileforge: Project React JS"
+        "command": "fileforge.commingSoon",
+        "title": "File Forge: Comming Soon"
       }
     ]
   },
